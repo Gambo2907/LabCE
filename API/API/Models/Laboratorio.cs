@@ -14,7 +14,6 @@ namespace API.Models
         [MaxLength(500, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public string? Facilidades {get; set;}
 
-        public virtual ICollection<Activo>? Activos { get; set; }
 
     }
 }
