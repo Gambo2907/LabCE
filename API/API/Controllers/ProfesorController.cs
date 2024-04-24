@@ -19,6 +19,8 @@ namespace API.Controllers
         [Route("crear_profesor")]
         public async Task<IActionResult> CrearProfesor(Profesor profesor)
         {
+            // Método para calcular la edad basada en la fecha de nacimiento
+            profesor.Edad = DateTime.Now.Year - profesor.Nacimiento.Year;
             await _context.Profesores.AddAsync(profesor);
             await _context.SaveChangesAsync();
 
@@ -37,11 +39,11 @@ namespace API.Controllers
         [Route("lista_profesores/{cedula}")]
         public async Task<ActionResult<Profesor>> ObtenerProfesorPorCedula(int cedula)
         {
-            var profesor = await _context.Activos.FindAsync(cedula);
+            var profesor = await _context.Profesores.FindAsync(cedula);
 
             if (profesor == null)
             {
-                return NotFound(); // Devuelve 404 si el laboratorio no se encuentra
+                return NotFound(); 
             }
 
             return Ok(profesor);
@@ -59,7 +61,8 @@ namespace API.Controllers
             ProfesorExistente!.Ap1 = profesor.Ap1;
             ProfesorExistente!.Ap2 = profesor.Ap2;
             ProfesorExistente!.Nacimiento = profesor.Nacimiento;
-            ProfesorExistente!.Edad = profesor.Edad;
+            ProfesorExistente!.Edad = DateTime.Now.Year - profesor.Nacimiento.Year;
+
 
             await _context.SaveChangesAsync();
             return Ok();

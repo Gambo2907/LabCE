@@ -35,13 +35,13 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("lista_activos/{placa}")]
-        public async Task<ActionResult<Activo>> ObtenerActivoPorPlaca(int placa)
+        public async Task<ActionResult<Activo>> ObtenerActivoPorPlaca(string placa)
         {
             var activo = await _context.Activos.FindAsync(placa);
 
             if (activo == null)
             {
-                return NotFound(); // Devuelve 404 si el laboratorio no se encuentra
+                return NotFound(); 
             }
 
             return Ok(activo);
@@ -49,7 +49,7 @@ namespace API.Controllers
 
         [HttpPut]
         [Route("actualizar_activo")]
-        public async Task<IActionResult> ActualizarActivo(int placa, Activo activo)
+        public async Task<IActionResult> ActualizarActivo(string placa, Activo activo)
         {
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Placa = activo.Placa;
@@ -66,7 +66,7 @@ namespace API.Controllers
         }
         [HttpDelete]
         [Route("eliminar_activo")]
-        public async Task<IActionResult> EliminarActivo(int placa)
+        public async Task<IActionResult> EliminarActivo(string placa)
         {
             var activo_borrado = await _context.Activos.FindAsync(placa);
             _context.Activos.Remove(activo_borrado!);

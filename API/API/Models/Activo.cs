@@ -4,7 +4,7 @@ namespace API.Models
 {
     public class Activo
     {
-        [Key]public required int Placa {  get; set; }
+        [Key]public required string Placa {  get; set; }
         [MaxLength(10, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public required string Tipo { get; set; }
         [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]

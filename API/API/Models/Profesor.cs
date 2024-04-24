@@ -4,7 +4,7 @@ namespace API.Models
 {
     public class Profesor
     {
-        [Key]public required int Cedula { get; set; }
+        [Key] public required int Cedula { get; set; }
 
         [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public required string Nombre { get; set; }
@@ -22,7 +22,14 @@ namespace API.Models
         public required string Password { get; set; }
 
         public required DateOnly Nacimiento { get; set; }
-        public required int Edad { get; set; }
+        public required int Edad { get; set; } // No será nulo
+
+
+        
+        
+    }
+
 
     }
-}
+   
+
