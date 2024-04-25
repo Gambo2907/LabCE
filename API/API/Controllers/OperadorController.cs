@@ -26,6 +26,7 @@ namespace API.Controllers
             //Encriptador
             EncryptMD5 encrypt = new EncryptMD5();
             operador.Password = encrypt.Encrypt(operador.Password);
+            operador.Aprobado = "No";
             await _context.Operadores.AddAsync(operador);
             await _context.SaveChangesAsync();
 
