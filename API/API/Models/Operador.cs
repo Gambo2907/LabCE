@@ -23,7 +23,9 @@ namespace API.Models
         public required string Ap2 { get; set; }
 
         public required DateOnly Nacimiento { get; set; }
-        public required int Edad { get; set; } 
+        public required int Edad { get; set; }
+
+        public required string Aprobado { get; set; }
 
     }
 }
