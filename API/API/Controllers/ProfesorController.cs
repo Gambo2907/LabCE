@@ -1,4 +1,5 @@
-﻿using API.Models;
+﻿using API.Encriptacion;
+using API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,10 +18,22 @@ namespace API.Controllers
 
         [HttpPost]
         [Route("crear_profesor")]
-        public async Task<IActionResult> CrearProfesor(Profesor profesor)
+        public async Task<IActionResult> CrearProfesor(Profesor modelo)
         {
-            // Método para calcular la edad basada en la fecha de nacimiento
-            profesor.Edad = DateTime.Now.Year - profesor.Nacimiento.Year;
+            //Encriptador
+            EncryptMD5 encrypt = new EncryptMD5();
+            Profesor profesor = new Profesor()
+            {
+                Cedula = modelo.Cedula,
+                Correo = modelo.Correo,
+                Password = encrypt.Encrypt(modelo.Password),
+                Nombre = modelo.Nombre,
+                Ap1 = modelo.Ap1,
+                Ap2 = modelo.Ap2,
+                Nacimiento = modelo.Nacimiento,
+                //Calcular la edad basada en la fecha de nacimiento
+                Edad = DateTime.Now.Year - modelo.Nacimiento.Year,
+            };
             await _context.Profesores.AddAsync(profesor);
             await _context.SaveChangesAsync();
 
@@ -56,7 +69,6 @@ namespace API.Controllers
             var ProfesorExistente = await _context.Profesores.FindAsync(cedula);
             ProfesorExistente!.Cedula = profesor.Cedula;
             ProfesorExistente!.Correo = profesor.Correo;
-            ProfesorExistente!.Password = profesor.Password;
             ProfesorExistente!.Nombre = profesor.Nombre;
             ProfesorExistente!.Ap1 = profesor.Ap1;
             ProfesorExistente!.Ap2 = profesor.Ap2;
