@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\profesorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\profesorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\operadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\operadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "API\\Models\\Profesor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T06:28:18.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T06:28:18.965Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProfesorController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ProfesorController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ProfesorController.cs",
@@ -80,20 +79,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
               "RelativeToolTip": "API\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAJAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAcwCsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-28T05:55:40.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OperadorController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\OperadorController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\OperadorController.cs",
@@ -101,8 +100,7 @@
               "RelativeToolTip": "API\\Controllers\\OperadorController.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAwwCsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T05:24:58.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T05:24:58.901Z"
             },
             {
               "$type": "Document",
@@ -114,8 +112,7 @@
               "RelativeToolTip": "API\\Models\\LoginModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T05:53:08.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T05:53:08.864Z"
             },
             {
               "$type": "Document",
@@ -127,8 +124,7 @@
               "RelativeToolTip": "API\\Controllers\\ActivoController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T05:48:52.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T05:48:52.105Z"
             },
             {
               "$type": "Document",
@@ -140,8 +136,7 @@
               "RelativeToolTip": "API\\Models\\Operador.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T20:36:15.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T20:36:15.012Z"
             },
             {
               "$type": "Document",
@@ -153,8 +148,7 @@
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T19:46:30.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T19:46:30.436Z"
             },
             {
               "$type": "Document",
@@ -166,8 +160,7 @@
               "RelativeToolTip": "API\\Models\\LabCEContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T20:26:43.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T20:26:43.123Z"
             }
           ]
         }

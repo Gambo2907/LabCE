@@ -40,6 +40,8 @@ namespace API.Controllers
             }
             return Ok();
         }
+        [HttpPost]
+        [Route("login_profesor")]
         public async Task<IActionResult> LoginProfesores(LoginModel modelo)
         {
             EncryptMD5 encrypt = new EncryptMD5();
