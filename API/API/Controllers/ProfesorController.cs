@@ -1,6 +1,9 @@
-﻿using API.Encriptacion;
+﻿using API.EmailSender;
+using API.Encriptacion;
 using API.Models;
+using API.RandPassword;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,10 +13,15 @@ namespace API.Controllers
     [ApiController]
     public class ProfesorController : ControllerBase
     {
+        PasswordGen passwordGen = new PasswordGen();
+        EncryptMD5 encrypt = new EncryptMD5();
+        EmailSend email = new EmailSend();
+
         private readonly LabCEContext _context;
         public ProfesorController(LabCEContext context)
         {
             _context = context;
+            
         }
 
         [HttpPost]
@@ -21,12 +29,13 @@ namespace API.Controllers
         public async Task<IActionResult> CrearProfesor(Profesor modelo)
         {
             //Encriptador
-            EncryptMD5 encrypt = new EncryptMD5();
+
+            
             Profesor profesor = new Profesor()
             {
                 Cedula = modelo.Cedula,
                 Correo = modelo.Correo,
-                Password = encrypt.Encrypt(modelo.Password),
+                Password = encrypt.Encrypt(passwordGen.GeneratePassword(8)),
                 Nombre = modelo.Nombre,
                 Ap1 = modelo.Ap1,
                 Ap2 = modelo.Ap2,
@@ -34,7 +43,11 @@ namespace API.Controllers
                 //Calcular la edad basada en la fecha de nacimiento
                 Edad = DateTime.Now.Year - modelo.Nacimiento.Year,
             };
+            var receptor = profesor.Correo;
+            var asunto = "Contraseña LabCE";
+            var mensaje = "Su contraseña para acceder al sistema es: " + encrypt.Decrypt(profesor.Password);
             await _context.Profesores.AddAsync(profesor);
+            await email.SendEmailAsync(receptor, asunto, mensaje);
             await _context.SaveChangesAsync();
 
             return Ok();
@@ -76,6 +89,24 @@ namespace API.Controllers
             ProfesorExistente!.Edad = DateTime.Now.Year - profesor.Nacimiento.Year;
 
 
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        [HttpPut]
+        [Route("cambio_password_profesor")]
+        public async Task<IActionResult> CambioPasswordProfesor(int cedula)
+        {
+
+            var ProfesorExistente = await _context.Profesores.FindAsync(cedula);
+            if (ProfesorExistente == null)
+            {
+                return NotFound();
+            }
+            ProfesorExistente!.Password = encrypt.Encrypt(passwordGen.GeneratePassword(8));
+            var receptor = ProfesorExistente.Correo;
+            var asunto = "Nueva contraseña LabCE";
+            var mensaje = "Su nueva contraseña para acceder al sistema es: " + encrypt.Decrypt(ProfesorExistente.Password);
+            await email.SendEmailAsync(receptor, asunto, mensaje);
             await _context.SaveChangesAsync();
             return Ok();
         }

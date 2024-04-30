@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\profesorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\profesorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\activocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\activocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\randpassword\\passwordgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\randpassword\\passwordgen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\encriptacion\\encryptmd5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\encriptacion\\encryptmd5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,38 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProfesorController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ProfesorController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ProfesorController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ProfesorController.cs",
-              "RelativeToolTip": "API\\Controllers\\ProfesorController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "PasswordGen.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\RandPassword\\PasswordGen.cs",
+              "RelativeDocumentMoniker": "API\\RandPassword\\PasswordGen.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\RandPassword\\PasswordGen.cs",
+              "RelativeToolTip": "API\\RandPassword\\PasswordGen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T03:17:56.717Z"
+              "WhenOpened": "2024-04-30T04:24:48.482Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "EncryptMD5.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Encriptacion\\EncryptMD5.cs",
+              "RelativeDocumentMoniker": "API\\Encriptacion\\EncryptMD5.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Encriptacion\\EncryptMD5.cs",
+              "RelativeToolTip": "API\\Encriptacion\\EncryptMD5.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T04:12:25.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ActivoController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ActivoController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ActivoController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ActivoController.cs",
               "RelativeToolTip": "API\\Controllers\\ActivoController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T03:01:14.203Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Program.cs",
-              "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Program.cs",
-              "RelativeToolTip": "API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T19:46:30.436Z",
+              "WhenOpened": "2024-04-30T03:48:23.992Z",
               "EditorCaption": ""
             }
           ]

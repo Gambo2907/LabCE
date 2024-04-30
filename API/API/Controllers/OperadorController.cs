@@ -65,6 +65,15 @@ namespace API.Controllers
             return Ok(operador);
         }
 
+        [HttpGet]
+        [Route("lista_operadores_no_aprobados")]
+        public async Task<ActionResult<IEnumerable<Operador>>> ListaOperadoresNoAprobados()
+        {
+
+            var operadores_no_aprobados = await _context.Operadores.Where(o => o.Aprobado == "No").ToListAsync();
+            return Ok(operadores_no_aprobados);
+        }
+
         [HttpPut]
         [Route("actualizar_operador")]
         public async Task<IActionResult> ActualizarOperador(int carnet, Operador operador)
@@ -80,6 +89,16 @@ namespace API.Controllers
             OperadorExistente!.Edad = DateTime.Now.Year - operador.Nacimiento.Year;
 
 
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("aprobar_operador")]
+        public async Task<IActionResult>AprobarOperador(int carnet, Operador operador)
+        {
+            var OperadorExistente = await _context.Operadores.FindAsync(carnet);
+            OperadorExistente!.Aprobado = "Si";
             await _context.SaveChangesAsync();
             return Ok();
         }
