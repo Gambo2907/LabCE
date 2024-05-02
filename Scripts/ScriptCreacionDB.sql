@@ -6,7 +6,7 @@ go
 -- Creacion de la tabla administrador
 CREATE TABLE Administradores
 (
-Id INT NOT NULL,
+Id INT UNIQUE NOT NULL,
 Correo VARCHAR(100) UNIQUE NOT NULL,
 Password VARCHAR(100) NOT NULL,
 PRIMARY KEY(Id)
@@ -24,7 +24,7 @@ Ap1 VARCHAR(100) NOT NULL,
 Ap2 VARCHAR(100) NOT NULL,
 Nacimiento DATE NOT NULL,
 Edad INT NOT NULL,
-Aprobado VARCHAR(10) NOT NULL,
+Aprobado BIT NOT NULL,
 Id_Admin INT,
 PRIMARY KEY(Carnet),
 CONSTRAINT "ADMIN_APRUEBA_FK" FOREIGN KEY(Id_Admin) REFERENCES Administradores(Id),
@@ -38,7 +38,7 @@ Placa VARCHAR(50) UNIQUE NOT NULL,
 Tipo VARCHAR(50) NOT NULL,
 Marca VARCHAR(100) NOT NULL,
 Fecha_Compra DATE,
-Req_Aprobador VARCHAR(5) NOT NULL,
+Req_Aprobador BIT NOT NULL,
 Id_Estado INT NOT NULL,
 Nombre_Lab VARCHAR(50),
 Ced_Prof INT,
