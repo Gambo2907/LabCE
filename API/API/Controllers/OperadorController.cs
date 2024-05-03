@@ -1,4 +1,5 @@
-﻿using API.Encriptacion;
+﻿using API.EmailSender;
+using API.Encriptacion;
 using API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,8 @@ namespace API.Controllers
     [ApiController]
     public class OperadorController : ControllerBase
     {
+        EncryptMD5 encrypt = new EncryptMD5();
+        EmailSend email = new EmailSend();
         private readonly LabCEContext _context;
         public OperadorController(LabCEContext context)
         {
@@ -22,7 +25,6 @@ namespace API.Controllers
         public async Task<IActionResult>RegistrarOperador(Operador operador)
         {
             //Encriptador
-            EncryptMD5 encrypt = new EncryptMD5();
             Operador operador1 = new Operador()
             {
                 Carnet = operador.Carnet,
@@ -35,7 +37,7 @@ namespace API.Controllers
                 Nacimiento = operador.Nacimiento,
                 //Calcular la edad basada en la fecha de nacimiento
                 Edad = DateTime.Now.Year - operador.Nacimiento.Year,
-                Aprobado = "No"
+                Aprobado = false
             };
             await _context.Operadores.AddAsync(operador1);
             await _context.SaveChangesAsync();
@@ -70,7 +72,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Operador>>> ListaOperadoresNoAprobados()
         {
 
-            var operadores_no_aprobados = await _context.Operadores.Where(o => o.Aprobado == "No").ToListAsync();
+            var operadores_no_aprobados = await _context.Operadores.Where(o => o.Aprobado == false).ToListAsync();
             return Ok(operadores_no_aprobados);
         }
 
@@ -95,11 +97,15 @@ namespace API.Controllers
 
         [HttpPut]
         [Route("aprobar_operador")]
-        public async Task<IActionResult>AprobarOperador(int carnet, Operador operador)
+        public async Task<IActionResult>AprobarOperador(int carnet)
         {
             var OperadorExistente = await _context.Operadores.FindAsync(carnet);
-            OperadorExistente!.Aprobado = "Si";
+            OperadorExistente!.Aprobado = true;
             await _context.SaveChangesAsync();
+            var receptor = OperadorExistente.Correo;
+            var asunto = "Ingreso Aprobado al sistema LabCE";
+            var mensaje = "Un admin ha aprobado su ingreso al sistema LabCE, a partir de este momento puede operar con normalidad";
+            await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }
         [HttpDelete]

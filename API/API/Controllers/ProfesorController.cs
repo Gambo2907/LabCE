@@ -28,9 +28,7 @@ namespace API.Controllers
         [Route("crear_profesor")]
         public async Task<IActionResult> CrearProfesor(Profesor modelo)
         {
-            //Encriptador
-
-            
+   
             Profesor profesor = new Profesor()
             {
                 Cedula = modelo.Cedula,
@@ -47,9 +45,8 @@ namespace API.Controllers
             var asunto = "Contraseña LabCE";
             var mensaje = "Su contraseña para acceder al sistema es: " + encrypt.Decrypt(profesor.Password);
             await _context.Profesores.AddAsync(profesor);
-            await email.SendEmailAsync(receptor, asunto, mensaje);
             await _context.SaveChangesAsync();
-
+            await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }
 

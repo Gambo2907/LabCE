@@ -11,6 +11,10 @@ namespace API.Models
         public DbSet<Operador> Operadores { get; set; }
         public DbSet<Activo> Activos { get; set; }
         public DbSet<Profesor> Profesores {  get; set; }
+        public DbSet<EstadoActivo> Estado_Activos {  get; set; }
+        public DbSet<Prestamo> Prestamos { get; set; }
+        public DbSet<Reservacion> Reservaciones { get; set; }
+        public DbSet<Reporte> Reportes { get; set; }
 
        
     }
