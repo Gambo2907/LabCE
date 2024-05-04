@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Reportes\\ReportesLabCE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E167A40B-1C53-45EB-BB66-3E5D6764A4BD}|ReportesLabCE\\ReportesLabCE.rptproj|C:\\Users\\User\\Desktop\\Reportes\\ReportesLabCE\\ReportesLabCE\\ReporteHorasOperador.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E167A40B-1C53-45EB-BB66-3E5D6764A4BD}|ReportesLabCE\\ReportesLabCE.rptproj|solutionrelative:ReportesLabCE\\ReporteHorasOperador.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReporteHorasOperador.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Reportes\\ReportesLabCE\\ReportesLabCE\\ReporteHorasOperador.rdl",
+              "RelativeDocumentMoniker": "ReportesLabCE\\ReporteHorasOperador.rdl",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Reportes\\ReportesLabCE\\ReportesLabCE\\ReporteHorasOperador.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "ReportesLabCE\\ReporteHorasOperador.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T04:34:13.214Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

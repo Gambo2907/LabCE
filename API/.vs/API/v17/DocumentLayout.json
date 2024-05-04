@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\prestamoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\prestamoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\activocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\activocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\activo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\activo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\labcecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\labcecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\reporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\autenticacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,12 +19,20 @@
       "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\operadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\operador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\operador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\controllers\\reservacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\labcecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\labcecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|c:\\users\\user\\documents\\github\\labce\\api\\api\\models\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAAF6C8D-9097-4BF2-88E7-8B746E637554}|API\\API.csproj|solutionrelative:api\\models\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,71 +42,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ActivoController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ActivoController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ActivoController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ActivoController.cs",
-              "RelativeToolTip": "API\\Controllers\\ActivoController.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAAAYwF0AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T07:25:16.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PrestamosController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\PrestamosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\PrestamosController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\PrestamosController.cs",
-              "RelativeToolTip": "API\\Controllers\\PrestamosController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAqwFIAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T07:10:18.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Activo.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Activo.cs",
-              "RelativeDocumentMoniker": "API\\Models\\Activo.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Activo.cs",
-              "RelativeToolTip": "API\\Models\\Activo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T07:08:18.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Prestamo.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Prestamo.cs",
-              "RelativeDocumentMoniker": "API\\Models\\Prestamo.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Prestamo.cs",
-              "RelativeToolTip": "API\\Models\\Prestamo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T07:06:38.612Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReservacionController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReservacionController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ReservacionController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReservacionController.cs",
-              "RelativeToolTip": "API\\Controllers\\ReservacionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAAAoAAAA",
+              "Title": "Reporte.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Reporte.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Reporte.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Reporte.cs",
+              "RelativeToolTip": "API\\Models\\Reporte.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T06:51:09.773Z",
+              "WhenOpened": "2024-05-04T04:22:10.877Z",
               "EditorCaption": ""
             },
             {
@@ -135,25 +71,7 @@
               "RelativeToolTip": "API\\Models\\Reservacion.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAgwBgAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T06:47:39.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReportesController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReportesController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ReportesController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReportesController.cs",
-              "RelativeToolTip": "API\\Controllers\\ReportesController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA5wCEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T06:08:39.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T06:47:39.001Z"
             },
             {
               "$type": "Document",
@@ -165,59 +83,70 @@
               "RelativeToolTip": "API\\Models\\LabCEContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T01:53:02.028Z",
+              "WhenOpened": "2024-05-03T01:53:02.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "API\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T06:08:45.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "AutenticacionController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\AutenticacionController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\AutenticacionController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\AutenticacionController.cs",
               "RelativeToolTip": "API\\Controllers\\AutenticacionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAgwB8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T06:37:14.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Operador.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Operador.cs",
-              "RelativeDocumentMoniker": "API\\Models\\Operador.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Operador.cs",
-              "RelativeToolTip": "API\\Models\\Operador.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T06:14:03.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "OperadorController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\OperadorController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\OperadorController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\OperadorController.cs",
               "RelativeToolTip": "API\\Controllers\\OperadorController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDUAAAAJAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAowDUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T06:09:15.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "API\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "DocumentIndex": 5,
+              "Title": "ReservacionController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReservacionController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ReservacionController.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ReservacionController.cs",
+              "RelativeToolTip": "API\\Controllers\\ReservacionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T06:08:45.032Z",
+              "WhenOpened": "2024-05-03T06:51:09.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Prestamo.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Prestamo.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Models\\Prestamo.cs",
+              "RelativeToolTip": "API\\Models\\Prestamo.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA8wBUAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T07:06:38.612Z",
               "EditorCaption": ""
             }
           ]
