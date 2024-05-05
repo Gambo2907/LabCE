@@ -42,7 +42,7 @@ namespace API.Controllers
                 Edad = DateTime.Now.Year - modelo.Nacimiento.Year,
             };
             var receptor = profesor.Correo;
-            var asunto = "Contraseña LabCE";
+            var asunto = "Contraseña LabCE - Ventana Profesor";
             var mensaje = "Su contraseña para acceder al sistema es: " + encrypt.Decrypt(profesor.Password);
             await _context.Profesores.AddAsync(profesor);
             await _context.SaveChangesAsync();

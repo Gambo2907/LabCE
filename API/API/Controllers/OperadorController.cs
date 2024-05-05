@@ -120,7 +120,7 @@ namespace API.Controllers
             OperadorExistente!.Aprobado = true;
             await _context.SaveChangesAsync();
             var receptor = OperadorExistente.Correo;
-            var asunto = "Ingreso Aprobado al sistema LabCE";
+            var asunto = "Ingreso Aprobado al sistema LabCE - Ventana Operador";
             var mensaje = "Un admin ha aprobado su ingreso al sistema LabCE, a partir de este momento puede operar con normalidad.";
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();

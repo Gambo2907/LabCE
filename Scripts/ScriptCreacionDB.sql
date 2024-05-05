@@ -86,7 +86,7 @@ PRIMARY KEY(Cedula)
 -- Creacion de la tabla de reservaciones
 CREATE TABLE Reservaciones
 (
-ID INT UNIQUE NOT NULL,
+ID INT UNIQUE IDENTITY(1,1) NOT NULL,
 Fecha DATE NOT NULL,
 HoraInicio TIME NOT NULL,
 HoraFin TIME NOT NULL,
@@ -111,7 +111,7 @@ CONSTRAINT "Carnet_OP_Reservacion" FOREIGN KEY (CarnetOP) REFERENCES Operadores(
 
 CREATE TABLE Prestamos
 (
-ID INT UNIQUE NOT NULL,
+ID INT UNIQUE IDENTITY(1,1) NOT NULL,
 Fecha DATE NOT NULL,
 Hora TIME NOT NULL,
 PlacaActivo VARCHAR(50) NOT NULL,
@@ -132,7 +132,7 @@ CONSTRAINT "Prestamo_Act_Carnet_Op" FOREIGN KEY(CarnetOP) REFERENCES Operadores(
 -- Creacion tabla reportes
 CREATE TABLE Reportes
 (
-ID INT UNIQUE NOT NULL,
+ID INT UNIQUE IDENTITY(1,1) NOT NULL,
 Fecha_Trabajo DATE NOT NULL,
 Hora_Inicio TIME NOT NULL,
 Hora_Final TIME NOT NULL,

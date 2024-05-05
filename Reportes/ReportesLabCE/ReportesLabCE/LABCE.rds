@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="LABCE">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DESKTOP-16S2RGB\SQLEXPRESS;Initial Catalog=LABCE</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a83ecc7a-3ab7-4cf2-b45f-b4b733f6cf9b</DataSourceID>
+</RptDataSource>

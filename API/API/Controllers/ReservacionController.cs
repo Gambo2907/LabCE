@@ -24,7 +24,7 @@ namespace API.Controllers
         {
             Reservacion reservacion = new Reservacion()
             {
-                ID = modelo.ID,
+                ID = 0,
                 Fecha = modelo.Fecha,
                 HoraInicio = modelo.HoraInicio,
                 HoraFin = modelo.HoraFin,
@@ -57,7 +57,7 @@ namespace API.Controllers
         {
             Reservacion reservacion = new Reservacion()
             {
-                ID = modelo.ID,
+                ID = 0,
                 Fecha = modelo.Fecha,
                 HoraInicio = modelo.HoraInicio,
                 HoraFin = modelo.HoraFin,
@@ -71,10 +71,13 @@ namespace API.Controllers
                 CorreoEstudiante = null,
                 CarnetEstudiante = null,
             };
+            await _context.Reservaciones.AddAsync(reservacion);
+            await _context.SaveChangesAsync();
+
             var profesor = await (from _ReservacionesP in _context.Reservaciones
                                   join _Profesores in _context.Profesores on _ReservacionesP.CedProf equals
                                   _Profesores.Cedula
-                                  where _ReservacionesP.CedProf == reservacion.CedProf
+                                  where _Profesores.Cedula == reservacion.CedProf
                                   select new
                                   {
                                       _Profesores.Nombre,
@@ -87,8 +90,6 @@ namespace API.Controllers
             var receptor = profesor.Correo;
             var asunto = "Confirmación Reserva Laboratorio: " + modelo.NombreLab;
             var mensaje = message.MensajeReserva(nombre_completo, reservacion.NombreLab, reservacion.Fecha.ToString(), reservacion.HoraInicio.ToString(), reservacion.HoraFin.ToString());
-            await _context.Reservaciones.AddAsync(reservacion);
-            await _context.SaveChangesAsync();
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
 

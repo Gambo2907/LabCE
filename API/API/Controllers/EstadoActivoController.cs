@@ -23,7 +23,7 @@ namespace API.Controllers
             return Ok(estado_activos);
         }
         [HttpGet]
-        [Route("lista_estado_activos/{id}")]
+        [Route("estado_activos/{id}")]
         public async Task<ActionResult<EstadoActivo>> ObtenerEstadoActivoPorID(int id)
         {
             var estado_activo = await _context.Estado_Activos.FindAsync(id);

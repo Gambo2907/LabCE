@@ -23,7 +23,7 @@ namespace API.Controllers
         {
             Prestamo prestamo = new Prestamo()
             {
-                ID = modelo.ID,
+                ID = 0,
                 Fecha = modelo.Fecha,
                 Hora = modelo.Hora,
                 PlacaActivo = modelo.PlacaActivo,
@@ -48,7 +48,7 @@ namespace API.Controllers
         {
             Prestamo prestamo = new Prestamo()
             {
-                ID = modelo.ID,
+                ID = 0,
                 Fecha = modelo.Fecha,
                 Hora = modelo.Hora,
                 PlacaActivo = modelo.PlacaActivo,

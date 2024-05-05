@@ -20,7 +20,7 @@ namespace API.Controllers
         {
             Reporte reporte = new Reporte()
             {
-                ID = modelo.ID,
+                ID = 0,
                 Fecha_Trabajo = DateOnly.Parse(DateTime.Today.ToString("yyyy-MM-dd")),
                 Hora_Inicio = modelo.Hora_Inicio,
                 Hora_Final = modelo.Hora_Final,

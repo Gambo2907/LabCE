@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.9.34728.123</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-05-04T20:30:02.9883782Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-05-05T07:05:48.5604393Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -27,15 +27,9 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>LABCE</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@Operador">
-            <Value>=Parameters!Operador.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
         <CommandText>select r.Fecha_Trabajo,r.Hora_Inicio,r.Hora_Final,r.Horas_Totales,
 concat (op.Ap1, ' ', op.Ap2, ' ', op.Nombre) as NombreCompleto
 from(Reportes as r JOIN Operadores as op on r.Carnet_Op = op.Carnet)
-where r.Carnet_OP = @Operador
 order by NombreCompleto ASC;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -812,23 +806,10 @@ order by NombreCompleto ASC;</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="Operador">
-      <DataType>String</DataType>
-      <Prompt>Ingrese el Carnet del operador</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>Operador</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
