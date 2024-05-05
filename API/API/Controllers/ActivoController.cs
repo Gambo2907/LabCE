@@ -17,8 +17,19 @@ namespace API.Controllers
 
         [HttpPost]
         [Route("crear_activo")]
-        public async Task<IActionResult> CrearActivo(Activo activo)
+        public async Task<IActionResult> CrearActivo(Activo modelo)
         {
+            Activo activo = new Activo() {
+                Placa = modelo.Placa,
+                Tipo = modelo.Tipo,
+                Marca = modelo.Placa,
+                Fecha_Compra = modelo.Fecha_Compra,
+                Req_Aprobador = modelo.Req_Aprobador,
+                Id_Estado = modelo.Id_Estado,
+                Nombre_Lab = modelo.Nombre_Lab,
+                Ced_Prof = modelo.Ced_Prof,
+                Aprobado = false
+            };
             await _context.Activos.AddAsync(activo);
             await _context.SaveChangesAsync();
 
@@ -80,20 +91,18 @@ namespace API.Controllers
         [Route("lista_activos_req_apr/{cedula}")]
         public async Task<ActionResult<IEnumerable<Activo>>> ObtenerActivosReqApr(int cedula)
         {
-            var activos = await (from _A in _context.Activos
-
+            var activos = await (from _A in _context.Activos 
+                                 join _P in _context.Prestamos on _A.Placa equals
+                                _P.PlacaActivo
                                  where _A.Ced_Prof == cedula
-                                 join _Ea in _context.Estado_Activos on _A.Id_Estado equals
-                                _Ea.Id_Estado
                                  select new
-                                 {
+                                 {   
+                                     _P.Fecha,
                                      _A.Placa,
                                      _A.Tipo,
                                      _A.Marca,
-                                     _A.Fecha_Compra,
-                                     _Ea.Estado,
                                  }
-                                 ).ToListAsync(); ;
+                                 ).ToListAsync(); 
 
             if (activos == null)
             {
@@ -189,6 +198,16 @@ namespace API.Controllers
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Id_Estado = 3;
 
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("aprobar_activo")]
+        public async Task<IActionResult> AprobarActivo(string placa)
+        {
+            var ActivoExistente = await _context.Activos.FindAsync(placa);
+            ActivoExistente!.Aprobado = true;
             await _context.SaveChangesAsync();
             return Ok();
         }

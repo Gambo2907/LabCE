@@ -1,6 +1,7 @@
 ﻿using API.EmailSender;
 using API.Encriptacion;
 using API.Models;
+using API.RandPassword;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ namespace API.Controllers
     {
         EncryptMD5 encrypt = new EncryptMD5();
         EmailSend email = new EmailSend();
+        PasswordGen passwordGen = new PasswordGen();
+
         private readonly LabCEContext _context;
         public OperadorController(LabCEContext context)
         {
@@ -83,7 +86,6 @@ namespace API.Controllers
             var OperadorExistente = await _context.Operadores.FindAsync(carnet);
             OperadorExistente!.Cedula = operador.Carnet;   
             OperadorExistente!.Correo = operador.Correo;
-            OperadorExistente!.Password = operador.Password;
             OperadorExistente!.Nombre = operador.Nombre;
             OperadorExistente!.Ap1 = operador.Ap1;
             OperadorExistente!.Ap2 = operador.Ap2;
@@ -96,6 +98,21 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [Route("actualizar_password_operador")]
+        public async Task<IActionResult> ActualizarPasswordOperador(int carnet)
+        {
+            var OperadorExistente = await _context.Operadores.FindAsync(carnet);
+            
+            OperadorExistente!.Password = encrypt.Encrypt(passwordGen.GeneratePassword(8)); ;
+            var receptor = OperadorExistente.Correo;
+            var asunto = "Contraseña LabCE";
+            var mensaje = "Su nueva contraseña para acceder al sistema es: " + encrypt.Decrypt(OperadorExistente.Password);
+            await _context.SaveChangesAsync();
+            await email.SendEmailAsync(receptor, asunto, mensaje);
+            return Ok();
+        }
+
+        [HttpPut]
         [Route("aprobar_operador")]
         public async Task<IActionResult>AprobarOperador(int carnet)
         {
@@ -104,7 +121,7 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             var receptor = OperadorExistente.Correo;
             var asunto = "Ingreso Aprobado al sistema LabCE";
-            var mensaje = "Un admin ha aprobado su ingreso al sistema LabCE, a partir de este momento puede operar con normalidad";
+            var mensaje = "Un admin ha aprobado su ingreso al sistema LabCE, a partir de este momento puede operar con normalidad.";
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }

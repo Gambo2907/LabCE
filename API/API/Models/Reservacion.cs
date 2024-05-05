@@ -11,9 +11,10 @@ namespace API.Models
         public required int CantHoras { get; set; }
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public required string NombreLab { get; set; }
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public int? CedProf { get; set; }
         public int? CarnetOP { get; set; }
+
+        [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public string? NombreEstudiante { get; set; }
         [MaxLength(100, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public string? AP1Estudiante { get; set; }

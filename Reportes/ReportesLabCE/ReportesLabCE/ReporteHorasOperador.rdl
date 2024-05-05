@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.9.34728.123</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-05-04T04:33:01.4630725Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-05-04T20:30:02.9883782Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -27,9 +27,15 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>LABCE</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Operador">
+            <Value>=Parameters!Operador.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select r.Fecha_Trabajo,r.Hora_Inicio,r.Hora_Final,r.Horas_Totales,
 concat (op.Ap1, ' ', op.Ap2, ' ', op.Nombre) as NombreCompleto
 from(Reportes as r JOIN Operadores as op on r.Carnet_Op = op.Carnet)
+where r.Carnet_OP = @Operador
 order by NombreCompleto ASC;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -679,7 +685,7 @@ order by NombreCompleto ASC;</CommandText>
             <Top>3.70099cm</Top>
             <Left>0.37042cm</Left>
             <Height>1.8cm</Height>
-            <Width>16.33453cm</Width>
+            <Width>16.33454cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -716,7 +722,7 @@ order by NombreCompleto ASC;</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox73</rd:DefaultName>
-              <Top>0.20285cm</Top>
+              <Top>0.23813cm</Top>
               <Left>14.09911cm</Left>
               <Height>0.76757cm</Height>
               <Width>2.60583cm</Width>
@@ -738,7 +744,7 @@ order by NombreCompleto ASC;</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.21736cm</Height>
+          <Height>1.45549cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -749,7 +755,7 @@ order by NombreCompleto ASC;</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Impreso por: </Value>
+                      <Value>Impreso por:  </Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>8pt</FontSize>
@@ -763,7 +769,7 @@ order by NombreCompleto ASC;</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Now(), "dd/MM/yyyy hh:mm")</Value>
+                      <Value>=Format(Now(), "dd/MM/yyyy HH:mm")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>8pt</FontSize>
@@ -774,8 +780,8 @@ order by NombreCompleto ASC;</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox80</rd:DefaultName>
-              <Top>0.03528cm</Top>
-              <Left>11.96114cm</Left>
+              <Top>0.17639cm</Top>
+              <Left>11.96115cm</Left>
               <Height>1.07625cm</Height>
               <Width>4.74381cm</Width>
               <Style>
@@ -806,10 +812,23 @@ order by NombreCompleto ASC;</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Operador">
+      <DataType>String</DataType>
+      <Prompt>Ingrese el Carnet del operador</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Operador</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

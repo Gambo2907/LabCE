@@ -1,4 +1,6 @@
-﻿using API.Models;
+﻿using API.EmailSender;
+using API.Messages;
+using API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

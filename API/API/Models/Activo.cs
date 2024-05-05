@@ -18,6 +18,7 @@ namespace API.Models
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")]
         public string? Nombre_Lab { get; set; }
         public int? Ced_Prof {  get; set; }
+        public Boolean Aprobado {  get; set; }
         
       
 

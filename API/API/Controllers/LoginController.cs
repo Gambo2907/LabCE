@@ -34,7 +34,7 @@ namespace API.Controllers
         public async Task<IActionResult> LoginAdmin(LoginModel modelo)
         {
             
-            Administrador? admin = await _context.Administradores.Where(o => o.Correo == modelo.Correo && o.Password == encrypt.Encrypt(modelo.Password)).FirstOrDefaultAsync();
+            Administrador? admin = await _context.Administradores.Where(o => o.Correo == modelo.Correo && o.Password == modelo.Password).FirstOrDefaultAsync();
             if (admin == null)
             {
                 return NotFound();

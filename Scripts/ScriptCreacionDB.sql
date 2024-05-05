@@ -42,6 +42,7 @@ Req_Aprobador BIT NOT NULL,
 Id_Estado INT NOT NULL,
 Nombre_Lab VARCHAR(50),
 Ced_Prof INT,
+Aprobado BIT,
 PRIMARY KEY(Placa),
 );
 
