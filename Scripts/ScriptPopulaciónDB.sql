@@ -7,3 +7,6 @@ Values (2,'Prestado');
 
 Insert into Estado_Activos
 Values (3,'Averiado');
+
+Insert into Estado_Activos
+Values(4,'Pendiente Aprobacion');

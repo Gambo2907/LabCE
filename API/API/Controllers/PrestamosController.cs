@@ -24,8 +24,8 @@ namespace API.Controllers
             Prestamo prestamo = new Prestamo()
             {
                 ID = 0,
-                Fecha = modelo.Fecha,
-                Hora = modelo.Hora,
+                Fecha = DateOnly.FromDateTime(DateTime.Now),
+                Hora = TimeOnly.FromDateTime(DateTime.Now),
                 PlacaActivo = modelo.PlacaActivo,
                 CedProf = null,
                 CarnetOP = modelo.CarnetOP,
@@ -36,7 +36,15 @@ namespace API.Controllers
 
             };
             var ActivoExistente = await _context.Activos.FindAsync(prestamo.PlacaActivo);
-            ActivoExistente!.Id_Estado = 2;
+            if(ActivoExistente.Req_Aprobador == false)
+            {
+                ActivoExistente!.Id_Estado = 2;
+            }
+            else
+            {
+                ActivoExistente!.Id_Estado = 4;
+
+            }
             await _context.Prestamos.AddAsync(prestamo);
             await _context.SaveChangesAsync();
             return Ok();
@@ -49,8 +57,8 @@ namespace API.Controllers
             Prestamo prestamo = new Prestamo()
             {
                 ID = 0,
-                Fecha = modelo.Fecha,
-                Hora = modelo.Hora,
+                Fecha = DateOnly.FromDateTime(DateTime.Now),
+                Hora = TimeOnly.FromDateTime(DateTime.Now),
                 PlacaActivo = modelo.PlacaActivo,
                 CedProf = modelo.CedProf,
                 CarnetOP = null,
@@ -72,11 +80,15 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosEstudiantes()
         {
             var prestamos = await (from _PrestamosE in _context.Prestamos
-                                       where _PrestamosE.CedProf == null
+                                   join _A in _context.Activos on _PrestamosE.PlacaActivo equals _A.Placa
+                                       where _PrestamosE.CedProf == null && _A.Id_Estado == 2
                                        select new
                                        {
                                            _PrestamosE.Fecha,
                                            _PrestamosE.Hora,
+                                           _A.Placa,
+                                           _A.Tipo,
+                                           _A.Marca,
                                            _PrestamosE.NombreEstudiante,
                                            _PrestamosE.AP1Estudiante,
                                            _PrestamosE.AP2Estudiante,
@@ -97,6 +109,8 @@ namespace API.Controllers
             var prestamos = await (from _PrestamosP in _context.Prestamos
                                    join _Pr in _context.Profesores on _PrestamosP.CedProf equals
                                    _Pr.Cedula
+                                   join _A in _context.Activos on _PrestamosP.PlacaActivo equals _A.Placa
+                                   where _A.Id_Estado == 2
                                    select new
                                    {
                                        _PrestamosP.Fecha,
@@ -120,7 +134,8 @@ namespace API.Controllers
             var prestamos = await (from _PrestamosP in _context.Prestamos
                                    join _Pr in _context.Profesores on _PrestamosP.CedProf equals
                                    _Pr.Cedula
-                                   where _PrestamosP.CedProf == cedula
+                                   join _A in _context.Activos on _PrestamosP.PlacaActivo equals _A.Placa
+                                   where _PrestamosP.CedProf == cedula && _A.Id_Estado == 2
                                    select new
                                    {
                                        _PrestamosP.Fecha,
@@ -129,6 +144,29 @@ namespace API.Controllers
                                        _Pr.Ap1,
                                        _Pr.Ap2,
                                        _Pr.Correo
+                                   }).ToListAsync();
+
+            if (prestamos == null)
+            {
+                return NotFound();
+            }
+            return Ok(prestamos);
+        }
+        [HttpGet]
+        [Route("prestamos_sin_aprobacion")]
+        public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosSinAprobacion()
+        {
+            var prestamos = await (from _P in _context.Prestamos
+                                   join _A in _context.Activos on _P.PlacaActivo equals _A.Placa
+                                   where _A.Id_Estado == 4
+                                   select new
+                                   {
+                                       _P.Fecha,
+                                       _P.Hora,
+                                       _A.Placa,
+                                       _A.Marca,
+                                       _A.Tipo
+
                                    }).ToListAsync();
 
             if (prestamos == null)

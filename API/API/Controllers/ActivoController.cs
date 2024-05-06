@@ -94,7 +94,7 @@ namespace API.Controllers
             var activos = await (from _A in _context.Activos 
                                  join _P in _context.Prestamos on _A.Placa equals
                                 _P.PlacaActivo
-                                 where _A.Ced_Prof == cedula
+                                 where _A.Ced_Prof == cedula && _A.Aprobado == false && _A.Id_Estado == 4
                                  select new
                                  {   
                                      _P.Fecha,
@@ -187,6 +187,7 @@ namespace API.Controllers
         {
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Id_Estado = 1;
+            ActivoExistente!.Aprobado = false;
 
             await _context.SaveChangesAsync();
             return Ok();
@@ -197,6 +198,7 @@ namespace API.Controllers
         {
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Id_Estado = 3;
+            ActivoExistente!.Aprobado = false;
 
             await _context.SaveChangesAsync();
             return Ok();
@@ -208,6 +210,7 @@ namespace API.Controllers
         {
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Aprobado = true;
+            ActivoExistente!.Id_Estado = 2;
             await _context.SaveChangesAsync();
             return Ok();
         }
