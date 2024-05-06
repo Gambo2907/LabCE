@@ -205,8 +205,8 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        [Route("aprobar_activo")]
-        public async Task<IActionResult> AprobarActivo(string placa)
+        [Route("aprobar_prestamo_activo")]
+        public async Task<IActionResult> AprobarPrestamoActivo(string placa)
         {
             var ActivoExistente = await _context.Activos.FindAsync(placa);
             ActivoExistente!.Aprobado = true;
@@ -214,6 +214,7 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
 
         [HttpDelete]
         [Route("eliminar_activo")]

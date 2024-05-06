@@ -62,8 +62,7 @@
               "RelativeToolTip": "API\\Controllers\\PrestamosController.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAswDwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T21:12:14.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T21:12:14.066Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "API\\Controllers\\ProfesorController.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T20:00:09.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T20:00:09.224Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "API\\Controllers\\LoginController.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T19:59:49.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T19:59:49.348Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "API\\Controllers\\EstadoActivoController.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAgwBkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T18:09:17.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T18:09:17.577Z"
             },
             {
               "$type": "Document",
@@ -112,7 +108,7 @@
               "RelativeDocumentMoniker": "API\\Controllers\\ActivoController.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\LabCE\\API\\API\\Controllers\\ActivoController.cs",
               "RelativeToolTip": "API\\Controllers\\ActivoController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAwwMkAAAAAAAAA",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAUwNgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T18:08:48.147Z",
               "EditorCaption": ""
