@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+/*
+ * Modelo de los reportes, donde se modelan sus atributos y de que tipo son
+ * */
+
 namespace API.Models
 {
     public class Reporte

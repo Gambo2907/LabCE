@@ -1,23 +1,42 @@
 ﻿using API.EmailSender;
+using API.Encriptacion;
 using API.Messages;
 using API.Models;
+using API.RandPassword;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+/*
+ *ReservacionController:  
+ */
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ReservacionController : ControllerBase
     {
+        //Constructor de la clase encargarda de encriptar y desencriptar passwords
+        EncryptMD5 encrypt = new EncryptMD5();
+        //Constructor de la clase encargada de enviar correos 
         EmailSend email = new EmailSend();
+        //Constructor de la clase encargada de generar passwords aleatorias 
+        PasswordGen passwordGen = new PasswordGen();
+        //Constructor de la clase encargada de generar un mensaje para las reservaciones
         Message message = new Message();
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public ReservacionController(LabCEContext context)
         {
             _context = context;
         }
+
+        /*
+         *CrearReservacionEstudiante: Se encarga de crear una nueva reservacion de lab por parte de un estudiante 
+         */
         [HttpPost]
         [Route("crear_reservacion_estudiante")]
         public async Task<IActionResult> CrearReservacionEstudiante(Reservacion modelo)
@@ -51,6 +70,9 @@ namespace API.Controllers
             return Ok();
 
         }
+        /*
+         *CrearReservacionProfesor: Se encarga de crear una nueva reservacion de lab por parte de un profesor
+         */
         [HttpPost]
         [Route("crear_reservacion_profesor")]
         public async Task<IActionResult> CrearReservacionProfesor(Reservacion modelo)
@@ -94,6 +116,9 @@ namespace API.Controllers
             return Ok();
 
         }
+        /*
+         *ObtenerReservacionEstudiantes: Se encarga de obtener todas las tuplas de reservacion de estudiantes 
+         */
         [HttpGet]
         [Route("reservaciones_estudiantes")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesEstudiantes()
@@ -117,7 +142,10 @@ namespace API.Controllers
             }
             return Ok(reservaciones);
         }
-
+        /*
+         *ObtenerReservacionEstudiantesNombreLabYFecha: Se encarga de obtener todas las tuplas de 
+         *reservacion de estudiantes con los valores de nombrelab y fecha
+         */
         [HttpGet]
         [Route("reservaciones_estudiantes/{nombrelab}/{fecha}")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesEstudiantesNombreLabYFecha(string nombrelab, DateOnly fecha)
@@ -140,7 +168,9 @@ namespace API.Controllers
             }
             return Ok(reservaciones);
         }
-
+        /*
+         *ObtenerReservacionesProfesores: Se encarga de obtener todas las tuplas de reservaciones hechas por profesores 
+         */
         [HttpGet]
         [Route("reservaciones_profesores")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesProfesores()
@@ -167,7 +197,10 @@ namespace API.Controllers
             }
             return Ok(reservaciones);
         }
-
+        /*
+         *ObtenerReservacionProfesoresNombreLabYFecha: Se encarga de obtener todas las tuplas de 
+         *reservacion de profesores con los valores de nombrelab y fecha
+         */
         [HttpGet]
         [Route("reservaciones_profesores/{nombrelab}/{fecha}")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesProfesoresPorLabYFecha(string nombrelab, DateOnly fecha)
@@ -193,6 +226,9 @@ namespace API.Controllers
             }
             return Ok(reservaciones);
         }
+        /*
+         * ObtenerReservacionesPorLab: se encarga de obtener todas las reservaciones por nombre de laboratorio
+         * */
         [HttpGet]
         [Route("reservaciones/{nombrelab}")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesPorLab(string nombrelab)
@@ -217,6 +253,10 @@ namespace API.Controllers
             }
             return Ok(reservaciones);
         }
+        /*
+         *ObtenerReservacionesPorLabYFecha: Se encarga de obtener todas las tuplas de 
+         *reservacion con los valores de nombrelab y fecha
+         */
         [HttpGet]
         [Route("reservaciones/{nombrelab}/{fecha}")]
         public async Task<ActionResult<IEnumerable<Reservacion>>> ObtenerReservacionesPorLabYFecha(string nombrelab, DateOnly fecha)

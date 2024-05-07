@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+/*
+ * Modelo de la Tabla reservacion, donde se modelan sus atributos y de que tipo son
+ * */
+
 namespace API.Models
 {
     public class Reservacion

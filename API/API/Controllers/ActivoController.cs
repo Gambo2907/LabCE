@@ -3,17 +3,30 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+/*Controlador del modelo Activo el cual se encarga de generar todas las consultas, además de añadir o
+ * eliminar datos de la tabla Activos que se encuentra en SQL Server
+*/
+
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ActivoController : ControllerBase
     {
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public ActivoController(LabCEContext context)
         {
             _context = context;
         }
+
+        /*
+         * CrearActivo: se encarga de crear un nuevo activo para añadirlo a la tabla activos en la DB existente.
+         * 
+         */
 
         [HttpPost]
         [Route("crear_activo")]
@@ -36,6 +49,11 @@ namespace API.Controllers
             return Ok();
         }
 
+        /*
+         * ListaActivos: este task devuelve todas las tuplas de la tabla activos
+         * 
+         */
+
         [HttpGet]
         [Route("lista_activos")]
         public async Task<ActionResult<IEnumerable<Activo>>> ListaActivos()
@@ -57,6 +75,11 @@ namespace API.Controllers
                                  ).ToListAsync();
             return Ok(activos);
         }
+
+        /*
+        * ObtenerActivoPorPlaca: este task devuelve el activo correspondiente a la placa consultada.
+        * 
+        */
 
         [HttpGet]
         [Route("lista_activos/{placa}")]
@@ -87,6 +110,12 @@ namespace API.Controllers
             return Ok(activo);
         }
 
+        /*
+        * ObtenerActivosReqApr: este task devuelve todas las tuplas de la tabla activos que requieren aprobacion 
+        * del profesor con la cédula consultada.
+        * 
+        */
+
         [HttpGet]
         [Route("lista_activos_req_apr/{cedula}")]
         public async Task<ActionResult<IEnumerable<Activo>>> ObtenerActivosReqApr(int cedula)
@@ -111,6 +140,12 @@ namespace API.Controllers
 
             return Ok(activos);
         }
+
+        /*
+        * ObtenerActivosDisponibles: este task devuelve todas las tuplas de la tabla activos que estan disponibles
+        * para prestamos
+        * 
+        */
 
         [HttpGet]
         [Route("lista_activos_disponibles")]
@@ -138,6 +173,11 @@ namespace API.Controllers
             return Ok(activos);
         }
 
+        /*
+        * ObtenerActivosPrestados: este task devuelve todas las tuplas de la tabla activos que estan prestados
+        * 
+        */
+
         [HttpGet]
         [Route("lista_activos_prestados")]
         public async Task<ActionResult<IEnumerable<Activo>>> ObtenerActivosPrestados()
@@ -163,6 +203,10 @@ namespace API.Controllers
 
             return Ok(activos);
         }
+        /*
+        * ActualizarActivo: este task busca la tupla con la placa consultada y edita los valores que el usuario elija.
+        * 
+        */
 
         [HttpPut]
         [Route("actualizar_activo")]
@@ -181,6 +225,11 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+        /*
+        * DevolucionActivo: este task se encarga de cambiar el estado del activo de prestado a disponible para prestamos
+        * 
+        */
         [HttpPut]
         [Route("devolucion_activo")]
         public async Task<IActionResult> DevolucionActivo(string placa)
@@ -192,6 +241,11 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+        /*
+        * AveriaActivo: este task se encarga de cambiar el estado del activo de prestado a averiado
+        * 
+        */
         [HttpPut]
         [Route("averia_activo")]
         public async Task<IActionResult> AveriaActivo(string placa)
@@ -203,7 +257,10 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
+        /*
+        * AprobarPrestamoActivo: este task se encarga de aprobar el prestamo de algun activo.
+        * 
+        */
         [HttpPut]
         [Route("aprobar_prestamo_activo")]
         public async Task<IActionResult> AprobarPrestamoActivo(string placa)
@@ -214,7 +271,10 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
+        /*
+        * EliminarActivo: este task se encarga de eliminar de la db la tupla con la placa consultada.
+        * 
+        */
 
         [HttpDelete]
         [Route("eliminar_activo")]

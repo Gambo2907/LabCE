@@ -4,11 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Unicode;
-
+/*
+ * Se encarga de encriptar y desencriptar las passwords generadas y añadidas por el cliente en MD5
+ * para asi guardarlas en las tuplas correspondientes en la base de datos.
+ */
 public class EncryptMD5
 {
     public string Encrypt(string input)
     {
+        //El hash es una clave secreta que se toma como base para encriptar y desencriptar los datos
         string hash = "bases de datos";
         byte[] data = UTF8Encoding.UTF8.GetBytes(input);
         MD5 md5 = MD5.Create();

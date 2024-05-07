@@ -6,24 +6,34 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+/*ProfesorController el cual se encarga de generar todas las consultas, además de añadir o
+ * eliminar datos de la tabla Profesores que se encuentra en SQL Server
+*/
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProfesorController : ControllerBase
     {
-        PasswordGen passwordGen = new PasswordGen();
+        //Constructor de la clase encargarda de encriptar y desencriptar passwords
         EncryptMD5 encrypt = new EncryptMD5();
+        //Constructor de la clase encargada de enviar correos 
         EmailSend email = new EmailSend();
-
+        //Constructor de la clase encargada de generar passwords aleatorias 
+        PasswordGen passwordGen = new PasswordGen();
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public ProfesorController(LabCEContext context)
         {
             _context = context;
             
         }
-
+        /*
+         * CrearProfesor: Se encarga de crear una nueva tupla en la tabla Profesores 
+         */
         [HttpPost]
         [Route("crear_profesor")]
         public async Task<IActionResult> CrearProfesor(Profesor modelo)
@@ -49,6 +59,9 @@ namespace API.Controllers
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }
+        /*
+         *ListaProfesores: Se encarga de obtener todas las tuplas de la tabla Profesores 
+         */
 
         [HttpGet]
         [Route("lista_profesores")]
@@ -57,7 +70,10 @@ namespace API.Controllers
             var profesores = await _context.Profesores.ToListAsync();
             return Ok(profesores);
         }
-
+        /*
+         *ObtenerProfesorPorCedula:Se encarga de obtener la tupla con el atributo cedula igual al valor digitado 
+         *por el usuario 
+         */
         [HttpGet]
         [Route("lista_profesores/{cedula}")]
         public async Task<ActionResult<Profesor>> ObtenerProfesorPorCedula(int cedula)
@@ -71,7 +87,10 @@ namespace API.Controllers
 
             return Ok(profesor);
         }
-
+        /*
+         *ActualizarProfesor: Se encarga de actualizar los datos de la tupla con el atributo cedula igual al valor
+         *digitado por el usuario
+         */
         [HttpPut]
         [Route("actualizar_profesor")]
         public async Task<IActionResult> ActualizarProfesor(int cedula, Profesor profesor)
@@ -89,6 +108,13 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+        /*
+         *CambioPasswordProfesor: Se encarga de cambiar el atributo password en la tupla con el atributo cedula igual
+         *al valor digitado por el usuario, el password se genera aleatoriamente con
+         *el metodo de la clase PasswordGen y se encripta con el metodo de la clase EncryptMD5, además envia un correo
+         *al usuario con su nuevo password con el metodo de la clase EmailSend
+         */
         [HttpPut]
         [Route("cambio_password_profesor")]
         public async Task<IActionResult> CambioPasswordProfesor(int cedula)
@@ -107,6 +133,10 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+        /*
+         *EliminarProfesor: Se encarga de eliminar la tupla con el atributo cedula igual al valor digitado por el 
+         *usuario
+         */
         [HttpDelete]
         [Route("eliminar_profesor")]
         public async Task<IActionResult> EliminarProfesor(int cedula)

@@ -3,17 +3,27 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+/*
+ *ReportesController: Se encarga de generar los reportes y guardarlos en la db 
+ */
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ReportesController : ControllerBase
     {
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public ReportesController(LabCEContext context)
         {
             _context = context;
         }
+        /*
+         *RegistrarReporte: Se encarga de registrar el reporte correspondiente al usuario 
+         */
         [HttpPost]
         [Route("registrar_reporte")]
         public async Task<IActionResult> RegistrarReporte(Reporte modelo)
@@ -32,7 +42,9 @@ namespace API.Controllers
 
             return Ok();
         }
-
+        /*
+         *ListaReportes: Obtiene todos los reportes que han hecho todos los usuarios. 
+         */
         [HttpGet]
         [Route("lista_reportes")]
         public async Task<ActionResult<IEnumerable<Reporte>>> ListaReportes()
@@ -55,6 +67,9 @@ namespace API.Controllers
             }
             return Ok(reportes);
         }
+        /*
+         *ListaReportes: Obtiene todos los reportes que ha hecho el usuario con el carnet digitado. 
+         */
         [HttpGet]
         [Route("lista_reportes/{carnet}")]
         public async Task<ActionResult<IEnumerable<Reporte>>> ListaReportesOperador(int carnet)

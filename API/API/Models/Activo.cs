@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+/*
+ * Modelo de la Tabla activo, donde se modelan sus atributos y de que tipo son
+ * */
 namespace API.Models
 {
     public class Activo

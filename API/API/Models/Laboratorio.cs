@@ -1,5 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
+/*
+ * Modelo de la Tabla laboratorios, donde se modelan sus atributos y de que tipo son
+ * */
+
 namespace API.Models
 {
     public class Laboratorio

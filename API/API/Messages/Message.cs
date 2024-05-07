@@ -1,4 +1,8 @@
 ﻿namespace API.Messages
+    /*
+     * Clase donde su metodo MensajeReserva se encarga de realizar un string que modela el mensaje
+     * que se enviara al correo del usuario que realice la reserva de un laboratorio. 
+     */
 {
     public class Message
     {

@@ -5,18 +5,29 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Numerics;
-
+/*
+ *PrestamosController: se encarga de generar todas las consultas, además de añadir datos 
+ *en la tabla Prestamos que se encuentra en SQL Server 
+ */
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class PrestamosController : ControllerBase
     {
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public PrestamosController(LabCEContext context)
         {
             _context = context;
         }
+        /*
+         *CrearPrestamoEstudiante: se encarga de crear una nueva tupla en la tabla prestamos 
+         */
+
         [HttpPost]
         [Route("crear_prestamo_estudiante")]
         public async Task<IActionResult> CrearPrestamoEstudiante(Prestamo modelo)
@@ -24,8 +35,8 @@ namespace API.Controllers
             Prestamo prestamo = new Prestamo()
             {
                 ID = 0,
-                Fecha = DateOnly.FromDateTime(DateTime.Now),
-                Hora = TimeOnly.FromDateTime(DateTime.Now),
+                Fecha = DateOnly.Parse(DateTime.Today.ToString("yyyy-MM-dd")),
+                Hora = TimeOnly.Parse(DateTime.Today.ToString("HH:mm:ss")),
                 PlacaActivo = modelo.PlacaActivo,
                 CedProf = null,
                 CarnetOP = modelo.CarnetOP,
@@ -50,6 +61,10 @@ namespace API.Controllers
             return Ok();
 
         }
+        /*
+         *CrearPrestamoProfesor: se encarga de crear una nueva tupla en la tabla prestamos 
+         */
+
         [HttpPost]
         [Route("crear_prestamo_profesor")]
         public async Task<IActionResult> CrearPrestamoProfesor(Prestamo modelo)
@@ -57,8 +72,8 @@ namespace API.Controllers
             Prestamo prestamo = new Prestamo()
             {
                 ID = 0,
-                Fecha = DateOnly.FromDateTime(DateTime.Now),
-                Hora = TimeOnly.FromDateTime(DateTime.Now),
+                Fecha = DateOnly.Parse(DateTime.Today.ToString("yyyy-MM-dd")),
+                Hora = TimeOnly.Parse(DateTime.Today.ToString("HH:mm:ss")),
                 PlacaActivo = modelo.PlacaActivo,
                 CedProf = modelo.CedProf,
                 CarnetOP = null,
@@ -75,6 +90,9 @@ namespace API.Controllers
             return Ok();
 
         }
+        /*
+         *ObtenerPrestamoEstudiantes: se encarga de obtener todas las tuplas de prestamos de estudiantes 
+         */
         [HttpGet]
         [Route("prestamos_estudiantes")]
         public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosEstudiantes()
@@ -102,6 +120,9 @@ namespace API.Controllers
             }
             return Ok(prestamos);
         }
+        /*
+         *ObtenerPrestamoProfesores: se encarga de obtener todas las tuplas de prestamos de profesores 
+         */
         [HttpGet]
         [Route("prestamos_profesores")]
         public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosProfesores()
@@ -127,6 +148,12 @@ namespace API.Controllers
             }
             return Ok(prestamos);
         }
+
+        /*
+         *ObtenerPrestamoProfesor: se encarga de obtener todas las tuplas de prestamos de profesores con el valor
+         *cedula
+         */
+
         [HttpGet]
         [Route("prestamos_profesores/{cedula}")]
         public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosProfesor(int cedula)
@@ -152,6 +179,10 @@ namespace API.Controllers
             }
             return Ok(prestamos);
         }
+
+        /*
+         * ObtenerPrestamosSinAprobacion: Obtiene los prestamos que no han sido aprobados por el profesor correspondiente 
+         */
         [HttpGet]
         [Route("prestamos_sin_aprobacion")]
         public async Task<ActionResult<IEnumerable<Prestamo>>> ObtenerPrestamosSinAprobacion()

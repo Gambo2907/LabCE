@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+/*OperadorController el cual se encarga de generar todas las consultas, además de añadir o
+ * eliminar datos de la tabla Operadores que se encuentra en SQL Server
+*/
 
 namespace API.Controllers
 {
@@ -13,21 +16,31 @@ namespace API.Controllers
     [ApiController]
     public class OperadorController : ControllerBase
     {
+        //Constructor de la clase encargarda de encriptar y desencriptar passwords
         EncryptMD5 encrypt = new EncryptMD5();
+        //Constructor de la clase encargada de enviar correos 
         EmailSend email = new EmailSend();
+        //Constructor de la clase encargada de generar passwords aleatorias 
         PasswordGen passwordGen = new PasswordGen();
-
+        //Obtiene el contexto para así poder mostrar y añadir datos a la DB
         private readonly LabCEContext _context;
+        /*
+         *Constructor de la clase con un contexto de base de datos 
+         */
         public OperadorController(LabCEContext context)
         {
             _context = context;
         }
 
+        /*
+         *RegistrarOperador: se encarga de añadir una tupla a la tabla Operadores en la db 
+         */
+
         [HttpPost]
         [Route("registrar_operador")]
         public async Task<IActionResult>RegistrarOperador(Operador operador)
         {
-            //Encriptador
+           
             Operador operador1 = new Operador()
             {
                 Carnet = operador.Carnet,
@@ -47,15 +60,33 @@ namespace API.Controllers
 
             return Ok();
         }
-
+        /*
+         *ListaOperadores: se encarga de obtener todas las tuplas a la tabla Operadores en la db 
+         */
         [HttpGet]
         [Route("lista_operadores")]
         public async Task<ActionResult<IEnumerable<Operador>>> ListaOperadores()
         {
-            var operadores = await _context.Operadores.ToListAsync();
+            var operadores = await (from _O in _context.Operadores
+                                    select new
+                                    {
+                                        _O.Carnet,
+                                        _O.Cedula,
+                                        _O.Correo,
+                                        _O.Nombre,
+                                        _O.Ap1,
+                                        _O.Ap2,
+                                        _O.Nacimiento,
+                                        _O.Edad,
+                                        _O.Aprobado
+                                    }).ToListAsync();
             return Ok(operadores);
         }
 
+        /*
+         *ObtenerOperadorCarnet: se encarga de obtener la tupla de la tabla Operadores con el atributo carnet
+         *digitado
+         */
 
         [HttpGet]
         [Route("lista_operadores/{carnet}")]
@@ -69,16 +100,34 @@ namespace API.Controllers
             }
             return Ok(operador);
         }
-
+        /*
+        *ListaOperadoresNoAprobados: se encarga de obtener las tupla de la tabla Operadores con el atributo aprobado
+        *falso
+        */
         [HttpGet]
         [Route("lista_operadores_no_aprobados")]
         public async Task<ActionResult<IEnumerable<Operador>>> ListaOperadoresNoAprobados()
         {
 
-            var operadores_no_aprobados = await _context.Operadores.Where(o => o.Aprobado == false).ToListAsync();
+            var operadores_no_aprobados = await (from _O in _context.Operadores
+                                                 where _O.Aprobado == false
+                                                 select new
+                                                 {
+                                                     _O.Carnet,
+                                                     _O.Cedula,
+                                                     _O.Correo,
+                                                     _O.Nombre,
+                                                     _O.Ap1,
+                                                     _O.Ap2,
+                                                     _O.Nacimiento,
+                                                     _O.Edad,
+                                                 }).ToListAsync();
             return Ok(operadores_no_aprobados);
         }
-
+        /*
+        *ActualizarOperador: se encarga de obtener la tupla de la tabla Operadores con el atributo carnet
+        *digitado y actualiza los atributos con los valores digitados por el usuario.
+        */
         [HttpPut]
         [Route("actualizar_operador")]
         public async Task<IActionResult> ActualizarOperador(int carnet, Operador operador)
@@ -96,7 +145,12 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
+        /*
+         *ActualizarPasswordOperador: se encarga de actualizar el atributo password de la tupla con el 
+         *atributo carnet igual al valor digitado por el usuario, el password se genera aleatoriamente con
+         *el metodo de la clase PasswordGen y se encripta con el metodo de la clase EncryptMD5, además envia un correo
+         *al usuario con su nuevo password con el metodo de la clase EmailSend
+         */
         [HttpPut]
         [Route("actualizar_password_operador")]
         public async Task<IActionResult> ActualizarPasswordOperador(int carnet)
@@ -111,7 +165,10 @@ namespace API.Controllers
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }
-
+        /*
+         *AprobarOperador: Se encarga de actualizar el atributo aprobado de la tupla correspondiente al
+         *atributo carnet igual al valor digitado por el usuario
+         */
         [HttpPut]
         [Route("aprobar_operador")]
         public async Task<IActionResult>AprobarOperador(int carnet)
@@ -125,6 +182,10 @@ namespace API.Controllers
             await email.SendEmailAsync(receptor, asunto, mensaje);
             return Ok();
         }
+        /*
+         *EliminarOperador: se encarga de eliminar la tupla correspondiente al atributo carnet
+         *igual al valor digitado por el usuario.
+         */
         [HttpDelete]
         [Route("eliminar_operador")]
         public async Task<IActionResult> EliminarOperador(int carnet)

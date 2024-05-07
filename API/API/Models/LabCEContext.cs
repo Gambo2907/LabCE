@@ -1,4 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
+/*
+ * Contexto de la base de datos, aquí con Entity Framework se pueden realizar las consultas, añadir datos a las tablas,
+ * eliminar datos de las tablas, etc, con la ayuda de los modelos y los controladores, esto modela las tablas que se
+ * encuentran en la base de datos existente.
+ * */
+
 namespace API.Models
 {
     public class LabCEContext : DbContext
