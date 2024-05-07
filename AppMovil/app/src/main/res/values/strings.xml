@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppMovil</string>
+    <string name="ProfName">Prof Name</string>
+    <string name="prof_age">Prof Age</string>
+    <string name="Active_Prof">Active Prof</string>
+    <string name="Prof" />
+    <string name="ProfCorreo">Ingrese Correo Institucional</string>
+    <string name="ProfPassword">Ingrese su password</string>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LogIn"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-237dp">
+
+        <TextView
+            android:id="@+id/laboratorio"
+            android:layout_width="161dp"
+            android:layout_height="79dp"
+            android:text="Log In"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo Institucional"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="147dp" />
+
+        <EditText
+            android:id="@+id/prof_password"
+            android:layout_width="382dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:hint="@string/ProfPassword"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="13dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <EditText
+            android:id="@+id/prof_correo"
+            android:layout_width="375dp"
+            android:layout_height="44dp"
+            android:ems="10"
+            android:hint="@string/ProfCorreo"
+            android:inputType="textEmailAddress"
+            tools:layout_editor_absoluteX="13dp"
+            tools:layout_editor_absoluteY="211dp" />
+
+        <Button
+            android:id="@+id/passwordChange_btn"
+            android:layout_width="121dp"
+            android:layout_height="61dp"
+            android:text="Ingresar"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="483dp" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_editor_absoluteX="13dp"
+            tools:layout_editor_absoluteY="307dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/laboratorio"
+        android:layout_width="161dp"
+        android:layout_height="79dp"
+        android:text="Log In"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo Institucional"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <EditText
+        android:id="@+id/prof_password"
+        android:layout_width="382dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="@string/ProfPassword"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <EditText
+        android:id="@+id/prof_correo"
+        android:layout_width="375dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/ProfCorreo"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <Button
+        android:id="@+id/passwordChange_btn"
+        android:layout_width="121dp"
+        android:layout_height="61dp"
+        android:text="Ingresar"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="483dp" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

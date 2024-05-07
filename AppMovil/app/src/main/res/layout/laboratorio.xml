@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LogIn"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <TextView
+            android:id="@+id/laboratorio"
+            android:layout_width="398dp"
+            android:layout_height="91dp"
+            android:text="Solicitud de reserva de laboratorios"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="86dp" />
+
+        <Button
+            android:id="@+id/backmenu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="24dp" />
+
+        <TextView
+            android:id="@+id/disponibles_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laboratorios disponibles"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/labdisponibles"
+            android:layout_width="409dp"
+            android:layout_height="506dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="224dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

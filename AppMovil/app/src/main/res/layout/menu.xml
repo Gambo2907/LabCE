@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LogIn"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="50dp">
+
+        <Button
+            android:id="@+id/passwordChange_btn"
+            android:layout_width="198dp"
+            android:layout_height="53dp"
+            android:text="Cambiar Contraseña"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="339dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre y Apellidos"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="239dp" />
+
+        <Button
+            android:id="@+id/aprobar_btn"
+            android:layout_width="200dp"
+            android:layout_height="51dp"
+            android:text="Aprobar Solicitudes"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="441dp" />
+
+        <Button
+            android:id="@+id/guardarpassword_btn"
+            android:layout_width="192dp"
+            android:layout_height="46dp"
+            android:text="Reservar Laboratorio"
+            tools:layout_editor_absoluteX="106dp"
+            tools:layout_editor_absoluteY="546dp" />
+
+        <TextView
+            android:id="@+id/laboratorio"
+            android:layout_width="150dp"
+            android:layout_height="85dp"
+            android:text="Menú"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="125dp" />
+
+        <Button
+            android:id="@+id/backmenu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
